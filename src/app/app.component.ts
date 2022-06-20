@@ -64,10 +64,56 @@ export class AppComponent implements OnInit {
     liff.shareTargetPicker(
       [
         {
-          type: "text",
-          text: "Hello, World!",
-        },
-      ],
+          "type": "bubble",
+          "styles": {
+            "header": {
+              "backgroundColor": "#ffaaaa"
+            },
+            "body": {
+              "backgroundColor": "#aaffaa"
+            },
+            "footer": {
+              "backgroundColor": "#aaaaff"
+            }
+          },
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "header"
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://example.com/flex/images/image.jpg",
+            "size": "full",
+            "aspectRatio": "2:1"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "body"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "footer"
+              }
+            ]
+          }
+        }
+    ],
       {
         isMultiple: true,
       }

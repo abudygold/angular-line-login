@@ -1,0 +1,5 @@
+Flow integrate Angular with line/liff:
+    - npm i express
+    - copy file server.js
+    - change start command to "start": "node server.js" in package.json
+    - update “outputPath”: “dist” in angular.json

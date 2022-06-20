@@ -3,3 +3,5 @@ Flow integrate Angular with line/liff:
     - copy file server.js
     - change start command to "start": "node server.js" in package.json
     - update “outputPath”: “dist” in angular.json
+    - create provider in https://developers.line.biz/console/
+    

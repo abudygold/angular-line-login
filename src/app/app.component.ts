@@ -54,29 +54,29 @@ export class AppComponent implements OnInit {
   }
 
   sendMessage(data: any) {
-    this.http.post('https://api.line.me/message/v3/notifier/send?target=service', {
-    "templateName": "thankyou_msg_en",
-    "params": {
-        "date": "2020-04-23",
-        "username": "Brown & Cony"
-    },
-    "notificationToken": data.notificationToken
-}).subscribe(resp => {
-  console.log(resp);
-})
-    // liff
-    // .sendMessages([
-    //   {
-    //     type: "text",
-    //     text: "Hello, World!",
-    //   },
-    // ])
-    // .then(() => {
-    //   console.log("message sent");
-    // })
-    // .catch((err) => {
-    //   console.log("error", err);
-    // });
+//     this.http.post('https://api.line.me/message/v3/notifier/send?target=service', {
+//     "templateName": "thankyou_msg_en",
+//     "params": {
+//         "date": "2020-04-23",
+//         "username": "Brown & Cony"
+//     },
+//     "notificationToken": data.notificationToken
+// }).subscribe(resp => {
+//   console.log(resp);
+// })
+    liff
+    .sendMessages([
+      {
+        type: "text",
+        text: "Hello, World!",
+      },
+    ])
+    .then(() => {
+      console.log("message sent");
+    })
+    .catch((err) => {
+      console.log("error", err);
+    });
   }
 
   logout(): void {

@@ -44,6 +44,12 @@ export class AppComponent implements OnInit {
     }).catch(err => console.error(err));
   }
 
+  notificationToken() {
+    this.http.post('https://api.line.me/message/v3/notifier/token', {
+      liffAccessToken: liff.getAccessToken()
+    })
+  }
+
   sendMessage() {
     liff
     .sendMessages([

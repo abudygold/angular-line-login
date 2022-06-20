@@ -16,20 +16,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.initLine();
-
-    liff
-    .sendMessages([
-      {
-        type: "text",
-        text: "Hello, World!",
-      },
-    ])
-    .then(() => {
-      console.log("message sent");
-    })
-    .catch((err) => {
-      console.log("error", err);
-    });
   }
 
   initLine(): void {
@@ -51,7 +37,25 @@ export class AppComponent implements OnInit {
       this.pictureUrl = profile.pictureUrl;
       this.statusMessage = profile.statusMessage;
       this.userId = profile.userId;
+      this.sendMessage();
     }).catch(err => console.error(err));
+  }
+
+  sendMessage() {
+
+    liff
+    .sendMessages([
+      {
+        type: "text",
+        text: "Hello, World!",
+      },
+    ])
+    .then(() => {
+      console.log("message sent");
+    })
+    .catch((err) => {
+      console.log("error", err);
+    });
   }
 
   logout(): void {

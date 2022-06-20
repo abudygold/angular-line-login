@@ -5,6 +5,7 @@ import {
 	HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import liff from '@line/liff';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -19,7 +20,7 @@ export class AuthInterceptor implements HttpInterceptor {
 			return next.handle(request);
 		}
 
-		const token = localStorage.getItem('LIFF_STORE:1657235309-waB8qN21:accessToken');
+		const token = liff.getAccessToken();
 
 		if (!!token) {
 			const headers = {

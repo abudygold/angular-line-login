@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   }
 
   initLine(): void {
-    liff.init({ liffId: '1657233567-Pamo3WQ7' }, () => {
+    liff.init({ liffId: '1657235309-waB8qN21' }, () => {
       if (liff.isLoggedIn()) {
         this.runApp();
       } else {

@@ -64,54 +64,36 @@ export class AppComponent implements OnInit {
     liff.shareTargetPicker(
       [
         {
-          "type": "bubble",
-          "styles": {
-            "header": {
-              "backgroundColor": "#ffaaaa"
-            },
-            "body": {
-              "backgroundColor": "#aaffaa"
-            },
-            "footer": {
-              "backgroundColor": "#aaaaff"
+            "type": "text",
+            "text": "Have you decided on your order?",
+            "quickReply": {
+                "items": [
+                    {
+                        "type": "action",
+                        "action": {
+                            "type": "uri",
+                            "label": "Menu",
+                            "uri": "https://example.com/menu"
+                        }
+                    },
+                    {
+                        "type": "action",
+                        "action": {
+                            "type": "uri",
+                            "label": "Phone order",
+                            "uri": "tel:09001234567"
+                        }
+                    },
+                    {
+                        "type": "action",
+                        "action": {
+                            "type": "uri",
+                            "label": "Recommend to friend",
+                            "uri": "https://line.me/R/nv/recommendOA/@linedevelopers"
+                        }
+                    }
+                ]
             }
-          },
-          "header": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "header"
-              }
-            ]
-          },
-          "hero": {
-            "type": "image",
-            "url": "https://example.com/flex/images/image.jpg",
-            "size": "full",
-            "aspectRatio": "2:1"
-          },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "body"
-              }
-            ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "footer"
-              }
-            ]
-          }
         }
     ],
       {

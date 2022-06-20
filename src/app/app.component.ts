@@ -40,42 +40,16 @@ export class AppComponent implements OnInit {
       this.pictureUrl = profile.pictureUrl;
       this.statusMessage = profile.statusMessage;
       this.userId = profile.userId;
-      this.getToken();
+      this.getFriendship();
     }).catch(err => console.error(err));
   }
 
-  getToken() {
-    this.http.post('https://api.line.me/message/v3/notifier/token', {
-      "liffAccessToken": liff.getAccessToken()
-  }).subscribe(resp => {
-      console.log(resp);
-      this.sendMessage(resp);
-    })
-  }
-
-  sendMessage(data: any) {
-//     this.http.post('https://api.line.me/message/v3/notifier/send?target=service', {
-//     "templateName": "thankyou_msg_en",
-//     "params": {
-//         "date": "2020-04-23",
-//         "username": "Brown & Cony"
-//     },
-//     "notificationToken": data.notificationToken
-// }).subscribe(resp => {
-//   console.log(resp);
-// })
-    liff
-    .sendMessages([
-      {
-        type: "text",
-        text: "Hello, World!",
-      },
-    ])
-    .then(() => {
-      console.log("message sent");
-    })
-    .catch((err) => {
-      console.log("error", err);
+  getFriendship() {
+    liff.getFriendship().then((data) => {
+        console.log(data);
+        if (data.friendFlag) {
+            // something you want to do
+        }
     });
   }
 

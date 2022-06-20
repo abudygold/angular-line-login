@@ -40,18 +40,25 @@ export class AppComponent implements OnInit {
       this.pictureUrl = profile.pictureUrl;
       this.statusMessage = profile.statusMessage;
       this.userId = profile.userId;
-      this.sendMessage();
+      this.getToken();
     }).catch(err => console.error(err));
   }
 
-  sendMessage() {
+  getToken() {
+    this.http.post('https://api.line.me/message/v3/notifier/token', null).subscribe(resp => {
+      console.log(resp);
+      this.sendMessage(resp);
+    })
+  }
+
+  sendMessage(data: any) {
     this.http.post('https://api.line.me/message/v3/notifier/send?target=service', {
     "templateName": "thankyou_msg_en",
     "params": {
         "date": "2020-04-23",
         "username": "Brown & Cony"
     },
-    "notificationToken": "34c11a03-b726-49e3-8ce0-949387a9.."
+    "notificationToken": data.notificationToken
 })
     // liff
     // .sendMessages([

@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   initLine(): void {
-    liff.init({ liffId: '1657235309-waB8qN21' }, () => {
+    liff.init({ liffId: '1657236181-DkbxgrEO' }, () => {
       if (liff.isLoggedIn()) {
         this.runApp();
       } else {

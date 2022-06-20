@@ -20,7 +20,7 @@ export class AuthInterceptor implements HttpInterceptor {
 			return next.handle(request);
 		}
 
-		const token = liff.getAccessToken();
+		const token = 'HPnl7NLuQPG/X69QwX71J+F2NGi2EfJmKCmjLS0raELWZbAfGu2JkWIJqjPEsRJ0r7VJgNNlKJCCUjlz9Rv/ee8BB7GsOAmtl431V8le0IF+JbyD0ylYwgA28pGz/XPxzaguf++elBQ/WRzfCGw/eQdB04t89/1O/w1cDnyilFU=';
 
 		if (!!token) {
 			const headers = {

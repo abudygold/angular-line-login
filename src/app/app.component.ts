@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import liff from '@line/liff';
 
@@ -13,6 +14,8 @@ export class AppComponent implements OnInit {
   pictureUrl = '';
   statusMessage = '';
   userId = '';
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.initLine();
@@ -42,20 +45,27 @@ export class AppComponent implements OnInit {
   }
 
   sendMessage() {
-
-    liff
-    .sendMessages([
-      {
-        type: "text",
-        text: "Hello, World!",
-      },
-    ])
-    .then(() => {
-      console.log("message sent");
-    })
-    .catch((err) => {
-      console.log("error", err);
-    });
+    this.http.post('https://api.line.me/message/v3/notifier/send?target=service', {
+    "templateName": "thankyou_msg_en",
+    "params": {
+        "date": "2020-04-23",
+        "username": "Brown & Cony"
+    },
+    "notificationToken": "34c11a03-b726-49e3-8ce0-949387a9.."
+})
+    // liff
+    // .sendMessages([
+    //   {
+    //     type: "text",
+    //     text: "Hello, World!",
+    //   },
+    // ])
+    // .then(() => {
+    //   console.log("message sent");
+    // })
+    // .catch((err) => {
+    //   console.log("error", err);
+    // });
   }
 
   logout(): void {

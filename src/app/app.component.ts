@@ -51,6 +51,20 @@ export class AppComponent implements OnInit {
             // something you want to do
         }
     });
+
+    liff
+  .sendMessages([
+    {
+      type: "text",
+      text: "Hello, World!",
+    },
+  ])
+  .then(() => {
+    console.log("message sent");
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
   }
 
   logout(): void {

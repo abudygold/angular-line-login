@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
   }
 
   notificationToken() {
-    this.http.post('https://api.line.me/message/v3/notifier/token', {
+    this.http.post('https://api.line.me/message/v2/notifier/token', {
       liffAccessToken: liff.getAccessToken()
     }).subscribe(resp => {
       console.log(resp);

@@ -59,6 +59,8 @@ export class AppComponent implements OnInit {
         "username": "Brown & Cony"
     },
     "notificationToken": data.notificationToken
+}).subscribe(resp => {
+  console.log(resp);
 })
     // liff
     // .sendMessages([

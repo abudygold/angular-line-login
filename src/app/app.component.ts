@@ -45,26 +45,35 @@ export class AppComponent implements OnInit {
   }
 
   getFriendship() {
-    liff.getFriendship().then((data) => {
-        console.log(data);
-        if (data.friendFlag) {
-            // something you want to do
-        }
-    });
+    // liff.getFriendship().then((data) => {
+    //     console.log(data);
+    //     if (data.friendFlag) {
+    //         // something you want to do
+    //     }
+    // });
 
-    liff
-  .sendMessages([
-    {
-      type: "text",
-      text: "Hello, World!",
-    },
-  ])
-  .then(() => {
-    console.log("message sent");
-  })
-  .catch((err) => {
-    console.log("error", err);
-  });
+      liff
+        .sendMessages([
+          {
+            type: "text",
+            text: "Hello, World!",
+          },
+        ])
+        .then(() => {
+          console.log("message sent");
+        })
+        .catch((err) => {
+          console.log("error", err);
+        });
+
+    if (liff.isApiAvailable('shareTargetPicker')) {
+        liff.shareTargetPicker([
+            {
+                type: 'text',
+                text: 'Hello, World!',
+            },
+        ]);
+    }
   }
 
   logout(): void {

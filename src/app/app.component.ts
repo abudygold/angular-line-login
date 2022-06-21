@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import liff from '@line/liff';
+import { crypto } from 'crypto-browserify';
 
-const crypto = require('crypto');
+// const crypto = require('crypto');
+// const crypto = require("crypto-browserify")
 
 @Component({
   selector: 'app-root',

@@ -17,7 +17,7 @@
       "dom"
     ],
     "types": ["node"],
-    "typeRoots": [ "../node_modules/@types" ]
+    "typeRoots": ["node_modules/@types"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false

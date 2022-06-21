@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import liff from '@line/liff';
 
+const crypto = require('crypto');
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -45,7 +47,6 @@ export class AppComponent implements OnInit {
   }
 
   getSignature() {
-    const crypto = require('crypto');
     const channelSecret = 'bb9d7b27df04c1a30b8a2870a7e56f9f';
     const body = '...';
     const signature = crypto.createHmac('SHA256', channelSecret).update(body).digest('base64');

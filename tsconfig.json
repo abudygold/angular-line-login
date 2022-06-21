@@ -16,9 +16,8 @@
       "es2018",
       "dom"
     ],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "types": ["node"],
+    "typeRoots": [ "../node_modules/@types" ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false

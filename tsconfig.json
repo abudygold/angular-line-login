@@ -17,15 +17,15 @@
       "dom"
     ],
     // "types": ["node"],
-    "typeRoots": ["node_modules/@types"],
-    "paths": {
-      "crypto": [
-        "node_modules/crypto-browserify"
-      ],
-      "stream": [
-        "node_modules/stream-browserify"
-      ]
-    }
+    // "typeRoots": ["../node_modules/@types"],
+    // "paths": {
+    //   "crypto": [
+    //     "node_modules/@types/node/crypto"
+    //   ],
+    //   "stream": [
+    //     "node_modules/@types/node/stream"
+    //   ]
+    // }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
